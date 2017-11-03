@@ -1,6 +1,7 @@
 {
   "name": "kushy-chatbot",
   "version": "0.1.0",
+  "homepage": "https://kushy.net/chatbot/",
   "private": true,
   "dependencies": {
     "react": "^16.0.0",
