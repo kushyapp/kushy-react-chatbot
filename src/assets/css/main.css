@@ -4,9 +4,14 @@ body {
 	background:url('../images/bg.jpg') center center;
 }
 
+.App {
+	width:100%;
+	max-width:100%;
+}
+
 .Header {
 	width:100%;
-	padding:2em;
+	padding:1em;
 	background:#111;
 	/*background:url(../images/featured.jpg) center center;*/
 }
@@ -15,7 +20,7 @@ body {
 }
 
 .content {
-	padding-top:3em;
+	padding-top:2em;
 }
 
 .rsc-container {
