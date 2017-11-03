@@ -1,3 +1,5 @@
+![Image of Kushy Chatbot](https://github.com/kushyapp/kushy-react-chatbot/blob/master/screenshot.png)
+
 # Kushy Chatbot
 
 The (world's first?) cannabis chatbot. Uses the Kushy API to serve cannabis data (strains, products, shops, etc).
@@ -7,14 +9,10 @@ The (world's first?) cannabis chatbot. Uses the Kushy API to serve cannabis data
 ### Start development
 
 `npm start`
-or
-`yarn start`
 
 ### Build production files
 
-`npm build`
-or
-`yarn build`
+`npm run build`
 
 ### Etc
 
