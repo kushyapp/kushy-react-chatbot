@@ -1,0 +1,17 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="111" height="32" viewBox="0 0 111 32">
+  <defs>
+    <polygon id="kushyapi-logo-black-a" points="0 32 32 32 32 0 0 0"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <text fill="#454545" font-family="GothamBlack, Gotham Black" font-size="42" font-weight="700">
+      <tspan x="39" y="31">API</tspan>
+    </text>
+    <circle cx="16" cy="16" r="16" fill="#CA2026"/>
+    <mask id="kushyapi-logo-black-b" fill="#fff">
+      <use xlink:href="#kushyapi-logo-black-a"/>
+    </mask>
+    <text fill="#FEFEFE" font-family="BacktoBlackDemo, Back to Black Demo" font-size="26" font-weight="700" mask="url(#kushyapi-logo-black-b)">
+      <tspan x="9" y="24">k</tspan>
+    </text>
+  </g>
+</svg>

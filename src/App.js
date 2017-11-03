@@ -1,169 +1,52 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
-import logo from './logo.svg';
-import './App.css';
-
-import Review from './Review';
-import KushyApi from './KushyApi';
 import ChatBot from 'react-simple-chatbot';
+import { ThemeProvider } from 'styled-components';
 
+import steps from './config/steps';
 
+import './App.css';
+import logo from './assets/images/kushy-logo-white.svg';
+import logo_stayregular from './assets/images/stayregular-logo-black.png';
+import logo_kushyapi from './assets/images/kushyapi-logo-black.png';
+import logo_chatbot from './assets/images/react-simple-chatbot.svg';
+import kushy_avatar from './assets/images/kushy-avatar.png';
+import icon_user from './assets/images/icon-user.png';
+import './assets/css/main.css';
+import './assets/css/bootstrap-grid.min.css';
 
-KushyApi.propTypes = {
-  steps: PropTypes.object,
-  triggerNextStep: PropTypes.func,
-};
-
-KushyApi.defaultProps = {
-  steps: undefined,
-  triggerNextStep: undefined,
-};
-
-const steps = [
-          {
-            id: '1',
-            message: 'What is your name?',
-            trigger: 'name',
-          },
-          {
-            id: 'name',
-            user: true,
-            trigger: '3',
-          },
-          {
-            id: '3',
-            message: 'Hi {previousValue}, what can I help you find today?',
-            trigger: 'sections',
-          },
-          {
-            id: 'sections',
-            options: [
-              { value: 'products', label: 'Products', trigger: '100' },
-              { value: 'strains', label: 'Strains', trigger: '5' },
-              { value: 'brands', label: 'Brands', trigger: '5' },
-              { value: 'shops', label: 'Shops', trigger: '5' },
-            ],
-          },
-          {
-            id: '100',
-            message: 'What kind of products are you looking for?',
-            trigger: 'products',
-          },
-          {
-            id: 'products',
-            options: [
-              { value: 'concentrates', label: 'Concentrates', trigger: '101' },
-              { value: 'edibles', label: 'Edibles', trigger: '102' },
-              { value: 'pre-roll', label: 'Pre-rolls', trigger: '150' },
-              { value: 'vape', label: 'Vape Cartridges', trigger: '150' },
-            ],
-          },
-          {
-            id: '101',
-            message: 'What kind of concentrates are you looking for?',
-            trigger: 'concentrates',
-          },
-          {
-            id: 'concentrates',
-            options: [
-              { value: 'bubble hash', label: 'Bubble Hash', trigger: '5' },
-              { value: 'crumble', label: 'Crumble', trigger: '5' },
-              { value: 'kief', label: 'Kief', trigger: '5' },
-              { value: 'oil', label: 'Oil', trigger: '5' },
-              { value: 'shatter', label: 'Shatter', trigger: '5' },
-              { value: 'wax', label: 'Wax', trigger: '5' },
-            ],
-          },
-          {
-            id: '102',
-            message: 'What kind of edibles are you looking for?',
-            trigger: 'edibles',
-          },
-          {
-            id: 'edibles',
-            options: [
-              { value: 'candy', label: 'Candy', trigger: '5' },
-              { value: 'chocolate', label: 'Chocolate', trigger: '5' },
-              { value: 'dressing', label: 'Dressing', trigger: '5' },
-              { value: 'drink', label: 'Drink', trigger: '5' },
-              { value: 'pill', label: 'Pill', trigger: '5' },
-              { value: 'snack', label: 'Snack', trigger: '5' },
-              { value: 'spread', label: 'Spread', trigger: '5' },
-            ],
-          },
-          {
-            id: '150',
-            message: 'Awesome. Do you know what brand it is?',
-            trigger: 'product_brands',
-          },
-          {
-            id: 'product_brands',
-            options: [
-              { value: 'yes', label: 'Yes', trigger: 'product_brand_yes' },
-              { value: 'no', label: 'No', trigger: 'product_brand_no' },
-            ],
-          },
-          {
-            id: 'product_brand_yes',
-            user: true,
-            trigger: 'product_brand_query',
-          },
-          {
-            id: 'product_brand_no',
-            message: 'No worries.',
-            trigger: 'product_brand_query',
-          },
-          {
-            id: 'product_brand_query',
-            message: 'Cool. Let me look that up.',
-            trigger: 'product_brands_search',
-          },
-          {
-            id: 'product_brands_search',
-            component: <KushyApi />,
-            waitAction: true,
-            trigger: '1',
-          },
-          {
-            id: '5',
-            message: 'Awesome. Do you know what brand it is?',
-            trigger: 'product_brands',
-          },
-        ];
-
-const wiki_steps = [
-      {
-        id: '1',
-        message: 'Type something to search for a strain. (Ex.: Blue)',
-        trigger: 'search',
-      },
-      {
-        id: 'search',
-        user: true,
-        trigger: '3',
-      },
-      {
-        id: '3',
-        component: <KushyApi />,
-        waitAction: true,
-        trigger: '1',
-      },
-    ];
+import chat_styles from './config/chatstyles'
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <header className="Header">
+          <img src={logo} className="Header-logo" alt="logo" />
         </header>
-        <p className="App-intro">
-           <ChatBot steps={steps} />
-        </p>
-      </div>
+        <div className="container content">
+          <div className="row justify-content-md-center">
+            <div className="col">
+              <ThemeProvider theme={chat_styles}>
+                 <ChatBot 
+                    steps={steps} 
+                    headerTitle="Kushy Chatbot"
+                    placeholder="Type away..."
+                    customDelay="500"
+                    botAvatar={kushy_avatar}
+                    userAvatar={icon_user}
+                  />
+              </ThemeProvider>
+            </div>
+          </div>
+        </div>
+        <footer className="Footer">
+          <p className="copy">Created by <a href="http://stayregular.net" className="stayregular"><img src={logo_stayregular} alt="Stay Regular" /></a> using the <a href="http://kushy.net" className="kushyapi"><img src={logo_kushyapi} alt="Kushy API" /></a>.</p>
+          <p className="credit">Shoutout to <a href="https://lucasbassetti.com.br/react-simple-chatbot/" className="chatbot"><img src={logo_chatbot} alt="React Simple Chatbot" /></a>.</p>
+        </footer>
+
+    </div>
     );
   }
 }

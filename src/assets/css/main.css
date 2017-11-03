@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+body {
+	background:url('../images/bg.jpg') center center;
+}
+
+.Header {
+	width:100%;
+	padding:2em;
+	background:#111;
+	/*background:url(../images/featured.jpg) center center;*/
+}
+.Header-logo {
+	width:100px;
+}
+
+.content {
+	padding-top:3em;
+}
+
+.rsc-container {
+	margin:auto;
+}
+
+.kushy_results li:first-child {
+	margin-top:10px;
+}
+.kushy_results li {
+	padding:0.5em;
+	text-align:left;
+	list-style:url('../images/icon-list.png');
+	border-bottom:1px solid #DDD
+}
+.kushy_results button {
+	background:#CC2029;
+	border:0;
+	padding:1em;
+	color:#FFF;
+	text-transform: uppercase;
+	border-radius:5px;
+	margin-right:10px;
+}
+
+
+.Footer {
+	font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', sans-serif;
+	margin-top:8em;
+	font-size:0.8em;
+	color:#777;
+	text-shadow: 1px 2px 7px #FFF;
+}
+.Footer img {
+	vertical-align: middle;
+	margin:0 2px;
+}
+.Footer .stayregular img {
+	max-width:60px;
+	vertical-align: 
+}
+.Footer .kushyapi img {
+	max-width:50px;
+}
+.Footer .chatbot img {
+	max-width:20px;
+	vertical-align: top;
+}
+.copy .stayregular {
+}
