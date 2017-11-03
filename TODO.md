@@ -2,7 +2,7 @@
 
 ## Bug Fixes
 
-* None yet!
+* Brands > Edibles > All not working
 
 ## In Progress
 
